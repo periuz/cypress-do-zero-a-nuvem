@@ -152,7 +152,17 @@ describe('Central de Atendimento a ocliente', () => {
 
         cy.get('#title')
             .should('be.visible')
+    })
 
+    it ('Encontra o gato perdido - DESAFIO FINAL', () => {
+        cy.get('#cat')
+            .invoke('show')
+            .should('be.visible')
+        cy.get('#title')
+            .invoke('text', 'CAT TAT')
+        cy.get('#subtitle')
+            .invoke('text', 'we love cats :3')
+        
     })
 
 
