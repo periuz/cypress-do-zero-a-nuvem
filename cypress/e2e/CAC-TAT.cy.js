@@ -30,6 +30,8 @@ describe('Central de Atendimento a ocliente', () => {
     })
 
     it ('Exibe mensagem de erro ao preencher o email erroneamente', () => {
+        cy.clock()
+        
         cy.get('#email')
             .type('ola')
         
@@ -37,6 +39,11 @@ describe('Central de Atendimento a ocliente', () => {
 
         cy.get('.error')
             .should('be.visible')
+
+        cy.tick(3000)
+
+        cy.get('.error')
+            .should('be.not.visible')
     })
 
     it ('Número não aceita letras', () => {
@@ -48,6 +55,8 @@ describe('Central de Atendimento a ocliente', () => {
     })
 
     it ('exibe mensagem de erro quando o telefone se torna obrigatório', () => {
+        cy.clock()
+        
         cy.get('#phone-checkbox').click()
         cy.get('.button').click()
         
@@ -62,7 +71,7 @@ describe('Central de Atendimento a ocliente', () => {
             .should('be.visible')
 
         cy.tick(3000)
-        
+
         cy.get('.error')
             .should('be.not.visible')
         
