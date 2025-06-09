@@ -60,6 +60,12 @@ describe('Central de Atendimento a ocliente', () => {
 
         cy.get('.error')
             .should('be.visible')
+
+        cy.tick(3000)
+        
+        cy.get('.error')
+            .should('be.not.visible')
+        
     })
 
     it ("preencher formulários (obrigatórios) com o comando personalizado", () => {
