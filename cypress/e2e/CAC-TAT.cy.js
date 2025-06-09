@@ -115,7 +115,7 @@ describe('Central de Atendimento a ocliente', () => {
             })
     })
 
-    it.only ('Drag and drop some file into attachments', () => {
+    it ('Drag and drop some file into attachments', () => {
         cy.get('#file-upload')
             .as('fileAttched')
             .selectFile('cypress/fixtures/example.json', {action : 'drag-drop'})
@@ -125,11 +125,11 @@ describe('Central de Atendimento a ocliente', () => {
             })
     })
 
-    it.only ('Checar se o link abre em uma nova página', () => {
+    it ('Checar se o link abre em uma nova página', () => {
         cy.get('a').should('have.attr', 'target', '_blank')
     })
 
-    it.only('Remover o target=blank do link e clicar nele', () => {
+    it('Remover o target=blank do link e clicar nele', () => {
         cy.get('a')
             .as('link')
             .invoke('removeAttr', 'target')
